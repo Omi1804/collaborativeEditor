@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <div class="menus">
+        <div class="textStyle">
+          <button onclick="f1()">
+            <i class="fa-solid fa-bold"></i>
+          </button>
+          <button onclick="f2()">
+            <i class="fa-solid fa-italic"></i>
+          </button>
+        </div>
+        <div class="textAlign">
+          <button onclick="f3()">
+            <i class="fa-solid fa-align-left"></i>
+          </button>
+          <button onclick="f4()">
+            <i class="fa-solid fa-align-center"></i>
+          </button>
+          <button onclick="f5()">
+            <i class="fa-solid fa-align-right"></i>
+          </button>
+        </div>
+
+        <div class="fontCasing">
+          <button onclick="f6()">
+            <span class="material-symbols-outlined"> uppercase </span>
+          </button>
+          <button onclick="f7()">
+            <span class="material-symbols-outlined"> lowercase </span>
+          </button>
+          <button onclick="f8()">
+            <span class="material-symbols-outlined"> unknown_7 </span>
+          </button>
+          <button onclick="f9()">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+        <button class="peopleJoin">
+          <span class="material-symbols-outlined"> group </span>
+          <span>2</span>
+        </button>
+      </div>
+
+      <div class="textarea" id="textarea"></div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor/min/vs/loader.js"></script>
+    <script src="./scripts/fontStyles.js"></script>
+    <script src="./scripts/app.js"></script>
+  </body>
+</html>
