@@ -38,7 +38,7 @@ require(["vs/editor/editor.main"], function () {
       // Get the current selection in the editor
       const selection = editor.getSelection();
 
-      // Apply the new text data
+      // Apply the new text dat
       const range = model.getFullModelRange();
       editor.executeEdits("", [
         {
