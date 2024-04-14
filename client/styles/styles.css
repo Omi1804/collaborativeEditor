@@ -69,3 +69,28 @@ button:hover {
   color: #555;
   overflow: hidden;
 }
+
+.remote-cursor::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: red;
+  z-index: 100;
+  animation: blinking 0.7s infinite;
+}
+
+@keyframes blinking {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.highlighted-text {
+  background-color: yellow;
+  border-radius: 4px;
+}
