@@ -17,8 +17,10 @@ require(["vs/editor/editor.main"], function () {
     Highlight: false,
   });
 
-  let decorations = []; // Track all current decorations
-  let cursorDecorations = {}; // To manage cursor decorations by user
+  console.log(editor);
+
+  let decorations = [];
+  let cursorDecorations = {};
 
   socket.on("updateUserCount", function (count) {
     console.log("Number of connected users:", count);

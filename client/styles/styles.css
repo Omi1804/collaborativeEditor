@@ -9,6 +9,10 @@ body {
   background-color: #f4f5f7;
   color: #333;
 }
+
+li {
+  list-style: none;
+}
 .menus {
   width: 100%;
   display: flex;
@@ -45,6 +49,7 @@ button:hover {
   vertical-align: middle;
 }
 .peopleJoin {
+  position: relative;
   margin-left: auto;
   background-color: #4caf50;
   display: flex;
@@ -68,6 +73,39 @@ button:hover {
   font-size: 16px;
   color: #555;
   overflow: hidden;
+}
+.peopleJoin:hover .participants {
+  opacity: 1; /* Make the participants section visible on hover */
+  visibility: visible; /* Ensure the participants section takes up space in the layout */
+}
+
+.participants {
+  opacity: 0; /* Initially hide the participants section */
+  visibility: hidden; /* Hide the participants section but keep its space in the layout */
+  position: absolute;
+  width: 15rem;
+  right: 0rem;
+  top: 4rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  z-index: 10;
+  color: #333333;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem; /* Add padding for spacing */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  border: 1px solid #e1e4e8;
+}
+
+.participants .allList > li {
+  padding: 0.8rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.participants .allList > li:hover {
+  background-color: #f4f5f7;
 }
 
 .remote-cursor::after {
