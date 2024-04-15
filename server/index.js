@@ -14,12 +14,15 @@ const io = new Server(server, {
 });
 
 let connectionCount = 0;
+let participants = [];
+
 io.on("connection", (socket) => {
   connectionCount++;
+  participants.push(socket.id);
   console.log("a user connected", socket.id);
   console.log("Total connections: " + connectionCount);
 
-  io.emit("updateUserCount", connectionCount); // Emit to all clients
+  io.emit("updateUserCount", connectionCount, participants);
 
   socket.on("textChange", (text) => {
     socket.broadcast.emit("textUpdate", text);
@@ -35,7 +38,8 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     connectionCount--;
-    io.emit("userDisconnected", socket.id);
+    participants = participants.filter((id) => id !== socket.id);
+    io.emit("updateUserCount", connectionCount, participants); // Emit updated user count and participant list
     console.log("user disconnected", socket.id);
   });
 });

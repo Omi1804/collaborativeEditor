@@ -22,9 +22,23 @@ require(["vs/editor/editor.main"], function () {
   let decorations = [];
   let cursorDecorations = {};
 
-  socket.on("updateUserCount", function (count) {
-    console.log("Number of connected users:", count);
+  // Function to update the list of participants
+  function updateParticipantList(participants) {
+    const participantList = document.querySelector(".allList");
+    participantList.innerHTML = ""; // Clear the existing list
+
+    participants.forEach((participant) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = participant;
+      participantList.appendChild(listItem);
+    });
+  }
+
+  socket.on("updateUserCount", function (count, participants) {
     document.getElementById("userCount").innerText = count;
+    console.log("Number of connected users:", count);
+    console.log("Number of connected participant:", participants);
+    updateParticipantList(participants);
   });
 
   editor.onDidChangeModelContent(() => {
