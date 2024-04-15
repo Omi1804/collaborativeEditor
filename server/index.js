@@ -39,7 +39,7 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     connectionCount--;
     participants = participants.filter((id) => id !== socket.id);
-    io.emit("updateUserCount", connectionCount, participants); // Emit updated user count and participant list
+    io.emit("updateUserCount", connectionCount, participants);
     console.log("user disconnected", socket.id);
   });
 });
